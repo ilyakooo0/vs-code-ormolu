@@ -1,6 +1,7 @@
 {
 	"name": "ormolu",
 	"displayName": "Ormolu",
+	"publisher": "ilyakooo0",
 	"description": "Haskell code formatter with ormolu",
 	"version": "0.0.1",
 	"engines": {
