@@ -3,7 +3,7 @@
 	"displayName": "Ormolu",
 	"publisher": "ilyakooo0",
 	"description": "Haskell code formatter with ormolu",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ilyakooo0/vs-code-ormolu"
@@ -15,19 +15,127 @@
 		"Formatters"
 	],
 	"main": "./out/extension.js",
-  "contributes": {
-    "languages": [
-      {
-        "id": "haskell",
-        "aliases": [
-          "Haskell"
-        ]
-      }
-    ]
-  },
-  "activationEvents": [
-    "onLanguage:haskell"
-  ],
+	"contributes": {
+		"languages": [
+			{
+				"id": "haskell",
+				"aliases": [
+					"Haskell"
+				]
+			}
+		],
+		"configuration": {
+			"title": "Ormolu",
+			"properties": {
+				"ormolu.extensions.AlternativeLayoutRule": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the AlternativeLayoutRule extension."
+				},
+				"ormolu.extensions.AlternativeLayoutRuleTransitional": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the AlternativeLayoutRuleTransitional extension."
+				},
+				"ormolu.extensions.Arrows": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the Arrows extension."
+				},
+				"ormolu.extensions.BangPatterns": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the BangPatterns extension."
+				},
+				"ormolu.extensions.Cpp": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the Cpp extension."
+				},
+				"ormolu.extensions.MagicHash": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the MagicHash extension."
+				},
+				"ormolu.extensions.MonadComprehensions": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the MonadComprehensions extension."
+				},
+				"ormolu.extensions.PatternSynonyms": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the PatternSynonyms extension."
+				},
+				"ormolu.extensions.RecursiveDo": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the RecursiveDo extension."
+				},
+				"ormolu.extensions.StaticPointers": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the StaticPointers extension."
+				},
+				"ormolu.extensions.TemplateHaskellQuotes": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the TemplateHaskellQuotes extension."
+				},
+				"ormolu.extensions.TransformListComp": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the TransformListComp extension."
+				},
+				"ormolu.extensions.TypeApplications": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the TypeApplications extension."
+				},
+				"ormolu.extensions.UnboxedSums": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the UnboxedSums extension."
+				},
+				"ormolu.extensions.UnboxedTuples": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the UnboxedTuples extension."
+				},
+				"ormolu.extensions.UnicodeSyntax": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enable the UnicodeSyntax extension."
+				},
+				"ormolu.tolerateCpp": {
+					"type": "boolean",
+					"default": false,
+					"description": "Do not fail if CPP pragma is present."
+				},
+				"ormolu.unsafe": {
+					"type": "boolean",
+					"default": false,
+					"description": "Run in \"unsafe\" mode. Do formatting faster but without automatic detection of defects."
+				},
+				"ormolu.checkIdempotency": {
+					"type": "boolean",
+					"default": false,
+					"description": "Fail if formatting is not idempotent."
+				},
+				"ormolu.customArguments": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Custom arguments to pass to ormolu."
+				}
+			}
+		}
+	},
+	"activationEvents": [
+		"onLanguage:haskell"
+	],
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
