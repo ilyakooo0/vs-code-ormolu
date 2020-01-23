@@ -3,11 +3,12 @@
 	"displayName": "Ormolu",
 	"publisher": "ilyakooo0",
 	"description": "Haskell code formatter with ormolu",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ilyakooo0/vs-code-ormolu"
 	},
+	"icon": "logo.png",
 	"engines": {
 		"vscode": "^1.39.0"
 	},

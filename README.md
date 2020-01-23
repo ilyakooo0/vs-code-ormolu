@@ -21,3 +21,7 @@ Initial release of Ormolu
 Added configurations.
 
 Changed error to warning.
+
+### 0.0.3
+
+Added logo.
