@@ -25,3 +25,7 @@ Changed error to warning.
 ### 0.0.3
 
 Added logo.
+
+### 0.0.4
+
+Fixed bugs.

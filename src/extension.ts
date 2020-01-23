@@ -27,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       for (let [key, value] of Object.entries(cfg.extensions)) {
         if (value) {
-          command += " -X" + key;
+          command += "-o -X" + key;
         }
       }
 
