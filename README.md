@@ -29,3 +29,7 @@ Added logo.
 ### 0.0.4
 
 Fixed bugs.
+
+### 0.0.5
+
+Fixed bugs.
