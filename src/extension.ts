@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as proc from 'child_process';
-import { isNull } from 'util';
+import { Range } from 'vscode';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -25,13 +25,15 @@ export function activate(context: vscode.ExtensionContext) {
 
       let command = "ormolu";
 
+      command += ` --start-line ${range.start.line + 1} --end-line ${range.end.line + (range.end.character == 0 ? 0 : 1)}`
+
       for (let [key, value] of Object.entries(cfg.extensions)) {
         if (value) {
           command += " -o -X" + key;
         }
       }
 
-      if (!isNull(cfg.customArguments)) {
+      if (cfg.customArguments !== null) {
         command += " " + cfg.customArguments;
       }
 
@@ -47,14 +49,21 @@ export function activate(context: vscode.ExtensionContext) {
         command += " -c";
       }
 
-      const text = document.getText(range);
+      const text = document.getText();
       let formattedText;
       try {
         formattedText = proc.execSync(command, { input: text }).toString();
       } catch (e) {
         return showErrorMessage('Ormolu failed to format the code', e);
       }
-      return [vscode.TextEdit.replace(range, formattedText)];
+
+      const fullDocumentRange =
+        new Range
+          (document.lineAt(0).range.start
+            , document.lineAt(document.lineCount - 1).range.end
+          );
+
+      return [vscode.TextEdit.replace(fullDocumentRange, formattedText)];
     }
   });
 }
