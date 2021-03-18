@@ -1,6 +1,10 @@
 # Change Log
 
 
+### 0.0.11
+
+Added the ability to specify the path to the executable.
+
 ### 0.0.10
 
 Fixed off-by-one range bug.

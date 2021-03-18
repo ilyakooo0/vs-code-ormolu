@@ -3,7 +3,7 @@
   "displayName": "Ormolu",
   "publisher": "ilyakooo0",
   "description": "Haskell code formatter with ormolu",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "repository": {
     "type": "git",
     "url": "https://github.com/ilyakooo0/vs-code-ormolu"
@@ -128,6 +128,13 @@
           ],
           "default": null,
           "description": "Custom arguments to pass to ormolu."
+        },
+        "ormolu.executablePath": {
+          "type": [
+            "string"
+          ],
+          "default": "ormolu",
+          "description": "The path to the ormolu executable to use."
         }
       }
     }

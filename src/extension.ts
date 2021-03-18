@@ -23,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       const cfg = vscode.workspace.getConfiguration("ormolu");
 
-      let command = "ormolu";
+      let command = cfg.executablePath;
 
       command += ` --start-line ${range.start.line + 1} --end-line ${range.end.line + (range.end.character == 0 ? 0 : 1)}`
 
