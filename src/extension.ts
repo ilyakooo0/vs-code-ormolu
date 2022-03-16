@@ -15,13 +15,13 @@ export function activate(context: vscode.ExtensionContext) {
         return [];
       };
 
+      const cfg = vscode.workspace.getConfiguration("ormolu");
+
       try {
-        proc.execSync('ormolu --help');
+        proc.execSync(cfg.executablePath + ' --help');
       } catch (e) {
         return showErrorMessage("Ormolu is not installed", e);
       }
-
-      const cfg = vscode.workspace.getConfiguration("ormolu");
 
       let command = cfg.executablePath;
 
