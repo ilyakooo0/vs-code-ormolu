@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
       };
 
       try {
-        proc.execSync('ormolu --help');
+        proc.execSync(cfg.executablePath + ' --help');
       } catch (e) {
         return showErrorMessage("Ormolu is not installed", e);
       }
