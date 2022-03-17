@@ -1,5 +1,8 @@
 # Change Log
 
+### 0.0.12
+
+Fixed a bug where executable paths outside of `$PATH` would fail. (@lzszt)
 
 ### 0.0.11
 
