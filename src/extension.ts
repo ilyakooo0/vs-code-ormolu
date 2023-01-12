@@ -26,6 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
       let command = cfg.executablePath;
 
       command += ` --start-line ${range.start.line + 1} --end-line ${range.end.line + (range.end.character == 0 ? 0 : 1)}`
+      command += ` ----stdin-input-file ${document.fileName}`
 
       for (let [key, value] of Object.entries(cfg.extensions)) {
         if (value) {
